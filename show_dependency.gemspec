@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["windwiny.ubt@gmail.com"]
   spec.summary       = %q{create dependency digraph}
   spec.description   = %q{create dependency digraph.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/windwiny/show_dependency"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
