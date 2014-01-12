@@ -1,6 +1,6 @@
 # ShowDependency
 
-TODO: Write a gem description
+create dependency digraph
 
 ## Installation
 
@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+ruby bin/show_xxx.rb --help
 
 ## Contributing
 
