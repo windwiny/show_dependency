@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby -w
+
 require "ffi"
 
 unless (ARGV & ['-h', '--help']).empty?

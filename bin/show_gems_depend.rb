@@ -88,11 +88,11 @@ tmp1 << "color=#{COLOR_DEVELOPMENT}  development dependent gems"
 msg = tmp1.join("\\n")
 gr_box_readme =      %Q{  readme  [shape=note, color=#{COLOR_NOTE}, label="README\\n#{msg}"]}
 
-msg = node_in_right.to_a.join("\\n").gsub('"', '')
-gr_box_deped_nodes = %Q{  deped_nodes  [shape=box, color=#{COLOR_NODEP}, fontsize=8, label="deped_nodes\\n#{msg}"]}
+msg = node_in_right.to_a.sort.join("\\n").gsub('"', '')
+gr_box_deped_nodes = %Q{  deped_nodes  [shape=box, color=#{COLOR_NODEP}, fontsize=8, label="DEPED_NODES\\n#{msg}"]}
 
 msg = gr_indep_nodes2.join("\\n").gsub('"', '')
-gr_box_indep_nodes = %Q{  indep_nodes  [shape=box, color=#{COLOR_NODEP}, fontsize=8, label="indep_nodes\\n#{msg}"]}
+gr_box_indep_nodes = %Q{  indep_nodes  [shape=box, color=#{COLOR_NODEP}, fontsize=8, label="INDEP_NODES\\n#{msg}"]}
 
 
 if $auto_create_png
