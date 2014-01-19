@@ -6,7 +6,7 @@ unless (ARGV & ['-h', '--help']).empty?
   abort <<-EOS
   Syntax:
     #{__FILE__}  [-O]
-      -O       auto create png file     
+      -O       auto create png file
   EOS
 end
 

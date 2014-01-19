@@ -7,7 +7,7 @@ unless (ARGV & ['-h', '--help']).empty?
   Syntax:
     #{__FILE__}  [--dev]  [-O]
       --dev    show development dependency
-      -O       auto create png file     
+      -O       auto create png file
   EOS
 end
 
