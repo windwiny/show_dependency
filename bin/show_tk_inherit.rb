@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby -w
+#!/usr/bin/env ruby
 
 require "tk"
 
@@ -39,10 +39,18 @@ cls=cls.uniq.sort_by(&:name)
 
 require "set"
 ass = Set.new
+mods = Set.new
 
-cls.each do |x1|
-  x1.ancestors.each_cons(2) do |x,y|
+cls.each do |cl1|
+  # [C1, M1, M2, M3, Object]  --> add C1 -> Object and C1 -> M1 / C1->M2 / C1->M3
+  ances = cl1.ancestors
+  ances.select { |x| Class == x.class }.each_cons(2) do |x, y|
     ass << %Q{  "#{x.name}"  ->  "#{y.name}"}
+  end
+  ances[1..-1].each do |m|
+    break if m.class == Class
+    ass << %Q{  "#{cl1.name}"  ->  "#{m.name}"  [color=blue]}
+    mods << %Q{  "#{m.name}"  [color=blue]}
   end
 end
 
@@ -56,6 +64,8 @@ else
 end
 o.puts "digraph G {"
 o.puts ass.to_a.sort
+o.puts
+o.puts mods.sort
 o.puts
 o.puts "}"
 
